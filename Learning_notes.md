@@ -19,7 +19,8 @@
 - When `rust-readobj` shows error didn't find it.
   Solution: `rustup component add llvm-tools-preview`
 
-
+- Stuck in QEMU terminal 
+  Solution: Ctrl + a, x 
 
 # References
 
