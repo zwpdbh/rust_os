@@ -4,4 +4,4 @@ run:
 		-machine virt \
 		-nographic \
 		-bios ../bootloader/rustsbi-qemu.bin \
-		-device loader,file=../target/riscv64gc-unknown-none-elf/release/ch01_user_space,addr=0x80200000
+		-device loader,file=../target/riscv64gc-unknown-none-elf/release/ch01,addr=0x80200000
