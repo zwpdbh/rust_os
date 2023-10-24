@@ -1,8 +1,8 @@
-EXE_FILE = "../target/riscv64gc-unknown-none-elf/release/ch01"
+EXE_FILE = ../target/riscv64gc-unknown-none-elf/release/ch01
 BIOS_FILE = "../bootloader/rustsbi-qemu.bin"
 
 # Get rid of metadata to manually help Qemu to load the executable
-REMOVE_META = rust-objcopy --strip-all $(EXE_FILE) -O binary $(EXE_FILE)
+REMOVE_META = rust-objcopy --strip-all $(EXE_FILE) -O binary $(EXE_FILE).bin
 LOAD_BIN = qemu-system-riscv64 \
 		-machine virt \
 		-nographic \
@@ -22,6 +22,6 @@ gdb:
 
 connect: 
 	riscv64-unknown-elf-gdb \
-    -ex 'file $(EXE_FILE)' \
+    -ex 'file $(EXE_FILE).bin' \
     -ex 'set arch riscv:rv64' \
     -ex 'target remote localhost:1234'
