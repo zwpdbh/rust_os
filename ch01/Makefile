@@ -31,6 +31,6 @@ asm:
 	cargo build && \
 	rust-objdump -S $(EXE_FILE)
 
-run:
+user_run:
 	cargo build && \
 	qemu-riscv64 $(EXE_FILE)
